@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlética Barbarus • UFOB — Diretoria</title>
+  <meta name="description" content="Conheça a diretoria atual da Atlética Barbarus: funções, setores, membros, perfil e citação de cada um." />
+  <meta name="theme-color" content="#0F2E22" />
+
+  <style>
+    :root{
+      --bg: #F6F7F6;
+      --paper: #FFFFFF;
+      --ink: #0B0E0C;
+      --muted: rgba(11,14,12,.68);
+      --muted2: rgba(11,14,12,.52);
+      --line: rgba(11,14,12,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.10);
+      --shadow2: 0 12px 36px rgba(0,0,0,.10);
+      --green: #1ED760;
+      --greenDeep:#0F2E22;
+      --orange:#FF6A00;
+      --r: 16px;
+      --r2: 20px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial;
+      background:
+        radial-gradient(900px 520px at 12% -5%, rgba(30,215,96,.14), transparent 60%),
+        radial-gradient(900px 520px at 92% 10%, rgba(255,106,0,.12), transparent 62%),
+        linear-gradient(180deg, #FFFFFF 0%, var(--bg) 60%, #F3F4F3 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    button{font:inherit}
+
+    .container{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(246,247,246,.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .logoWrap{
+      width:64px; height:64px;
+      background: transparent;
+      display:grid; place-items:center;
+    }
+    .logoWrap img{width:100%; height:100%; object-fit:contain}
+    .brandText h1{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+    .brandText p{margin:3px 0 0; color:var(--muted2); font-size:12px}
+
+    .links{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center}
+    .links a{
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .links a:hover{color:var(--ink); border-color: rgba(11,14,12,.12); background: rgba(255,255,255,.65)}
+
+    .actions{display:flex; align-items:center; gap:10px; justify-content:flex-end; min-width:220px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.75);
+      color: var(--ink);
+      cursor:pointer;
+      transition:.18s ease;
+      font-weight: 750;
+      letter-spacing:.02em;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.92); transform: translateY(-1px)}
+    .btnPrimary{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(15,46,34,1), rgba(15,46,34,.86));
+      box-shadow: 0 18px 52px rgba(15,46,34,.18);
+    }
+
+    .hero{padding: 24px 0 12px}
+    .heroCard{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .heroTag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.8);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+    }
+    .hero h2{margin:10px 0 0; font-size:30px; line-height:1.05; letter-spacing:-.4px; text-transform:uppercase}
+    .hero p{margin:10px 0 0; color:var(--muted); line-height:1.7}
+
+    .infoGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .infoCard{
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.86);
+      padding: 12px;
+    }
+    .infoCard strong{display:block; font-size:20px; color:var(--greenDeep); line-height:1}
+    .infoCard span{display:block; margin-top:4px; color:var(--muted); font-size:12px; letter-spacing:.07em; text-transform:uppercase}
+
+    section{padding: 16px 0}
+    .sectionHead{margin-bottom:10px}
+    .sectionHead h3{margin:0; font-size:19px; letter-spacing:.06em; text-transform:uppercase}
+    .sectionHead p{margin:6px 0 0; color:var(--muted)}
+
+    .roleGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .roleCard{
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow2);
+      padding: 14px;
+    }
+    .roleCard h4{margin:0; font-size:13px; letter-spacing:.08em; text-transform:uppercase}
+    .roleCard p{margin:7px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    .directorBoard{display:grid; gap:16px}
+    .sector{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.86);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+    }
+    .sectorHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(11,14,12,.08);
+    }
+    .sectorHead h4{margin:0; font-size:16px; letter-spacing:.05em; text-transform:uppercase}
+    .sectorHead p{margin:5px 0 0; color:var(--muted); font-size:13px}
+    .electedTag{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid rgba(15,46,34,.18);
+      background: rgba(30,215,96,.14);
+      color: var(--greenDeep);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      border-radius:999px;
+      padding: 5px 9px;
+    }
+
+    .members{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+    .member{
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.9);
+      padding: 12px;
+      display:grid;
+      grid-template-columns: 78px 1fr;
+      gap:12px;
+      align-items:start;
+    }
+    .photo{
+      width:78px;
+      height:78px;
+      border-radius: 16px;
+      border:1px dashed rgba(11,14,12,.16);
+      background:
+        linear-gradient(135deg, rgba(30,215,96,.16), rgba(255,106,0,.16));
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      color: var(--greenDeep);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      font-size:12px;
+      overflow:hidden;
+    }
+    .photo img{width:100%; height:100%; object-fit:cover; display:block}
+    .member h5{margin:0; font-size:14px; letter-spacing:.03em; text-transform:uppercase}
+    .member .role{display:block; margin-top:4px; font-size:12px; color:var(--muted2); letter-spacing:.06em; text-transform:uppercase}
+    .member p{margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
+    .quote{
+      margin:8px 0 0;
+      border-left:3px solid rgba(15,46,34,.24);
+      padding-left:8px;
+      color: var(--greenDeep);
+      font-size:12px;
+      font-style:italic;
+      line-height:1.55;
+    }
+
+    .cta{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.86);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom: 20px;
+    }
+    .cta strong{display:block; letter-spacing:.06em; text-transform:uppercase}
+    .cta p{margin:6px 0 0; color:var(--muted)}
+
+    footer{
+      padding: 22px 0 34px;
+      border-top: 1px solid rgba(11,14,12,.10);
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footerBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .menuBtn{display:none}
+    @media (max-width: 1040px){
+      .links{display:none}
+      .actions{min-width:auto}
+      .menuBtn{display:inline-flex}
+      .heroCard{grid-template-columns:1fr}
+      .roleGrid{grid-template-columns: repeat(2, 1fr)}
+      .members{grid-template-columns:1fr}
+    }
+    @media (max-width: 580px){
+      .roleGrid{grid-template-columns:1fr}
+      .member{grid-template-columns:1fr}
+      .photo{width:100%; height:120px}
+    }
+
+    .sheet{position:fixed; inset:0; z-index:80; display:none}
+    .sheet.show{display:block}
+    .sheet .bg{position:absolute; inset:0; background: rgba(0,0,0,.22)}
+    .sheet .panel{
+      position:absolute; left:50%; top:14px; transform: translateX(-50%);
+      width:min(560px, 92vw);
+      border-radius: 18px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .sheet a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      margin-top: 10px;
+      color: var(--muted);
+    }
+    .sheet a:hover{background: rgba(255,255,255,.95); color: var(--ink)}
+
+    ::selection{background: rgba(30,215,96,.22)}
+  </style>
+</head>
+<body>
+
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="bg" data-close></div>
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+        <strong style="letter-spacing:.06em; text-transform:uppercase">Menu</strong>
+        <button class="btn" data-close aria-label="Fechar menu">Fechar</button>
+      </div>
+      <a href="index.html" data-close>Início</a>
+      <a href="socio.php" data-close>Clã Barbarus (Sócio)</a>
+      <a href="loja.php" data-close>Nossa Loja</a>
+      <a href="historia.html" data-close>História e Legado</a>
+      <a href="diretoria.html" data-close>Diretoria</a>
+      <a href="contato.html" data-close>Fale Conosco</a>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Página inicial">
+          <div class="logoWrap" aria-hidden="true">
+            <img alt="Logo Barbarus" src="img/logo.png" onerror="this.style.display='none'" />
+          </div>
+          <div class="brandText">
+            <h1>ATLÉTICA BARBARUS</h1>
+            <p>UFOB • Força. União. Coragem.</p>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Navegação principal">
+          <a href="socio.php">Clã Barbarus (Sócio)</a>
+          <a href="loja.php">Nossa loja</a>
+          <a href="historia.html">História e legado</a>
+          <a href="diretoria.html">Diretoria</a>
+          <a href="contato.html">Fale conosco</a>
+        </nav>
+
+        <div class="actions">
+          <button class="btn menuBtn" id="menuBtn" aria-label="Abrir menu">Menu</button>
+          <a class="btn btnPrimary" href="contato.html">Falar com a diretoria</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero" aria-label="Diretoria atual da Atlética Barbarus">
+        <div class="heroCard">
+          <div>
+            <span class="heroTag">Gestão Atual</span>
+            <h2>Diretoria Barbarus</h2>
+            <p>
+              Aqui você encontra os membros da diretoria atual da Atlética Barbarus,
+              com função, setor, perfil pessoal e uma citação que representa cada liderança.
+            </p>
+          </div>
+          <div class="infoGrid" aria-label="Resumo da diretoria">
+            <div class="infoCard"><strong>6</strong><span>Setores ativos</span></div>
+            <div class="infoCard"><strong>12</strong><span>Membros atuais</span></div>
+            <div class="infoCard"><strong>BICT</strong><span>Curso representado</span></div>
+            <div class="infoCard"><strong>2026</strong><span>Gestão vigente</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Funções e setores da diretoria">
+        <div class="sectionHead">
+          <h3>Funções da diretoria</h3>
+          <p>Cada setor tem objetivo claro para fortalecer o clã dentro e fora das competições.</p>
+        </div>
+        <div class="roleGrid">
+          <article class="roleCard">
+            <h4>Presidência</h4>
+            <p>Define estratégia, representa institucionalmente a atlética e coordena decisões gerais da gestão.</p>
+          </article>
+          <article class="roleCard">
+            <h4>Financeiro</h4>
+            <p>Controla receitas e despesas, presta contas e garante sustentabilidade para eventos e projetos.</p>
+          </article>
+          <article class="roleCard">
+            <h4>Esportes</h4>
+            <p>Organiza treinos, modalidades, calendários e participação da Barbarus em campeonatos.</p>
+          </article>
+          <article class="roleCard">
+            <h4>Eventos</h4>
+            <p>Planeja calouradas, ações de integração, festas e ativações presenciais da atlética.</p>
+          </article>
+          <article class="roleCard">
+            <h4>Comunicação e Marketing</h4>
+            <p>Cuida do conteúdo, identidade visual, redes sociais e relacionamento com a comunidade.</p>
+          </article>
+          <article class="roleCard">
+            <h4>Social e Projetos</h4>
+            <p>Lidera campanhas solidárias, impacto social e integração com estudantes ingressantes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-label="Membros da diretoria atual">
+        <div class="sectionHead">
+          <h3>Membros atuais</h3>
+          <p>Substitua nomes, fotos e descrições pelos dados oficiais da gestão atual.</p>
+        </div>
+
+        <div class="directorBoard">
+          <article class="sector">
+            <div class="sectorHead">
+              <div>
+                <h4>Presidência</h4>
+                <p>Representação institucional e direção estratégica da Barbarus.</p>
+              </div>
+              <span class="electedTag">Membros atuais</span>
+            </div>
+            <div class="members">
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Presidente</h5>
+                  <span class="role">Presidência</span>
+                  <p>Estudante do BICT, responsável por liderar a gestão, alinhar metas e representar oficialmente a atlética.</p>
+                  <p class="quote">"Liderar é servir o clã com disciplina e visão de futuro."</p>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Vice-Presidente</h5>
+                  <span class="role">Vice-presidência</span>
+                  <p>Apoia a presidência, acompanha execução dos setores e garante continuidade das ações da gestão.</p>
+                  <p class="quote">"A força da Barbarus vem da união entre pessoas e propósito."</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sectorHead">
+              <div>
+                <h4>Financeiro</h4>
+                <p>Controle financeiro, planejamento de caixa e prestação de contas.</p>
+              </div>
+              <span class="electedTag">Membros atuais</span>
+            </div>
+            <div class="members">
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Diretor(a) Financeiro(a)</h5>
+                  <span class="role">Diretoria Financeira</span>
+                  <p>Organiza entradas e saídas, orçamento de eventos e acompanhamento mensal de resultados.</p>
+                  <p class="quote">"Gestão forte começa com transparência nas contas."</p>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Coordenador(a) de Tesouraria</h5>
+                  <span class="role">Tesouraria</span>
+                  <p>Auxilia no fluxo de pagamentos, registros e documentação de contratos e parceiros.</p>
+                  <p class="quote">"Cada recurso bem aplicado vira resultado para o clã."</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sectorHead">
+              <div>
+                <h4>Esportes</h4>
+                <p>Modalidades, calendário de treinos e desempenho competitivo.</p>
+              </div>
+              <span class="electedTag">Membros atuais</span>
+            </div>
+            <div class="members">
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Diretor(a) de Esportes</h5>
+                  <span class="role">Diretoria de Esportes</span>
+                  <p>Coordena equipes, treinadores e preparação da Barbarus para campeonatos universitários.</p>
+                  <p class="quote">"Treino, raça e constância transformam time em família."</p>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Coordenador(a) Técnico(a)</h5>
+                  <span class="role">Coordenação Técnica</span>
+                  <p>Faz ponte com capitães e acompanha evolução das modalidades ao longo da temporada.</p>
+                  <p class="quote">"Quem veste Barbarus entra para competir com alma."</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sectorHead">
+              <div>
+                <h4>Eventos</h4>
+                <p>Organização de festas, integração e calendário social da atlética.</p>
+              </div>
+              <span class="electedTag">Membros atuais</span>
+            </div>
+            <div class="members">
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Diretor(a) de Eventos</h5>
+                  <span class="role">Diretoria de Eventos</span>
+                  <p>Planeja produção, logística e experiência dos eventos que movimentam a comunidade.</p>
+                  <p class="quote">"Evento bom é aquele que vira memória coletiva."</p>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Coordenador(a) de Produção</h5>
+                  <span class="role">Produção</span>
+                  <p>Executa cronograma, fornecedores e operação para garantir qualidade em cada entrega.</p>
+                  <p class="quote">"Detalhe bem feito é o que torna o evento inesquecível."</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sectorHead">
+              <div>
+                <h4>Comunicação e Marketing</h4>
+                <p>Posicionamento, redes sociais, campanhas e identidade da atlética.</p>
+              </div>
+              <span class="electedTag">Membros atuais</span>
+            </div>
+            <div class="members">
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Diretor(a) de Comunicação</h5>
+                  <span class="role">Comunicação</span>
+                  <p>Conduz estratégia de conteúdo e relacionamento digital com a comunidade acadêmica.</p>
+                  <p class="quote">"Comunicar bem é fazer a voz do clã chegar mais longe."</p>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Coordenador(a) de Marketing</h5>
+                  <span class="role">Marketing</span>
+                  <p>Planeja campanhas, ativações e crescimento da marca Barbarus em ações e produtos.</p>
+                  <p class="quote">"Marca forte nasce da verdade de quem a representa."</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="sector">
+            <div class="sectorHead">
+              <div>
+                <h4>Social e Projetos</h4>
+                <p>Impacto social, acolhimento e ações de integração estudantil.</p>
+              </div>
+              <span class="electedTag">Membros atuais</span>
+            </div>
+            <div class="members">
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Diretor(a) Social</h5>
+                  <span class="role">Diretoria Social</span>
+                  <p>Desenvolve projetos solidários e iniciativas de acolhimento para novos estudantes.</p>
+                  <p class="quote">"Ser clã também é cuidar de quem caminha com a gente."</p>
+                </div>
+              </article>
+              <article class="member">
+                <div class="photo">Foto</div>
+                <div>
+                  <h5>Nome do(a) Coordenador(a) de Projetos</h5>
+                  <span class="role">Projetos</span>
+                  <p>Conecta ideias a execução, transformando propostas em ações concretas de impacto.</p>
+                  <p class="quote">"Toda grande conquista começa com uma boa iniciativa."</p>
+                </div>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footerBottom">
+          <span>© <span id="year"></span> Atlética Barbarus • UFOB</span>
+          <div style="display:flex; gap:14px">
+            <a href="https://instagram.com/ufobarbarus" target="_blank">Instagram</a>
+            <a href="mailto:aaabicet@gmail.com">Email</a>
+            <a href="contato.html">Contato</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const sheet = document.getElementById('sheet');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', ()=>{
+      sheet.classList.add('show');
+      sheet.setAttribute('aria-hidden','false');
+    });
+    sheet?.addEventListener('click', (e)=>{
+      if(e.target && e.target.matches('[data-close]')){
+        sheet.classList.remove('show');
+        sheet.setAttribute('aria-hidden','true');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

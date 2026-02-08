@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlética Barbarus • UFOB — Loja</title>
+  <meta name="description" content="Loja oficial da Atlética Barbarus (UFOB). Produtos, kits e pré-vendas." />
+  <meta name="theme-color" content="#0F2E22" />
+
+  <style>
+    :root{
+      --bg: #F6F7F6;
+      --paper: #FFFFFF;
+      --ink: #0B0E0C;
+      --muted: rgba(11,14,12,.68);
+      --muted2: rgba(11,14,12,.52);
+      --line: rgba(11,14,12,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.10);
+      --shadow2: 0 12px 36px rgba(0,0,0,.10);
+      --green: #1ED760;
+      --greenDeep:#0F2E22;
+      --orange:#FF6A00;
+      --r: 16px;
+      --r2: 20px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial;
+      background:
+        radial-gradient(900px 520px at 12% -5%, rgba(30,215,96,.14), transparent 60%),
+        radial-gradient(900px 520px at 92% 10%, rgba(255,106,0,.12), transparent 62%),
+        linear-gradient(180deg, #FFFFFF 0%, var(--bg) 60%, #F3F4F3 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    button,input{font:inherit}
+
+    .container{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(246,247,246,.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .logoWrap{
+      width:64px; height:64px;
+      background: transparent;
+      display:grid; place-items:center;
+    }
+    .logoWrap img{width:100%; height:100%; object-fit:contain}
+    .brandText h1{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+    .brandText p{margin:3px 0 0; color:var(--muted2); font-size:12px}
+
+    .links{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center}
+    .links a{
+      font-size:14px;
+      font-weight: 700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .links a:hover{color:var(--ink); border-color: rgba(11,14,12,.12); background: rgba(255,255,255,.65)}
+
+    .actions{display:flex; align-items:center; gap:10px; justify-content:flex-end; min-width:220px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.75);
+      color: var(--ink);
+      cursor:pointer;
+      transition:.18s ease;
+      font-weight: 750;
+      letter-spacing:.02em;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.92); transform: translateY(-1px)}
+    .btnAccent{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(255,106,0,1), rgba(255,166,84,.95));
+      box-shadow: 0 18px 52px rgba(255,106,0,.18);
+    }
+
+    .hero{
+      padding: 24px 0 8px;
+    }
+    .heroCard{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .heroCard h2{margin:0; font-size:24px}
+    .heroCard p{margin:6px 0 0; color:var(--muted)}
+
+    .filters{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin: 14px 0 6px;
+    }
+    .chip{
+      padding: 8px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.75);
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color: var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin: 14px 0 22px;
+    }
+    .product{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+    }
+    .product .img{
+      height: 180px;
+      background: linear-gradient(135deg, rgba(15,46,34,.10), rgba(255,106,0,.12));
+      display:grid;
+      place-items:center;
+      color: var(--muted2);
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight: 800;
+      position: relative;
+      overflow: hidden;
+    }
+    .product .img::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.32);
+      top:-60px;
+      right:-40px;
+    }
+    .product .img::after{
+      content:"Ilustrativo";
+      position:absolute;
+      bottom:10px;
+      left:10px;
+      font-size:10px;
+      letter-spacing:.08em;
+      color: rgba(11,14,12,.55);
+      background: rgba(255,255,255,.65);
+      border:1px solid rgba(11,14,12,.12);
+      border-radius: 999px;
+      padding: 5px 8px;
+    }
+    .img.p1{background: linear-gradient(135deg, #d8f6e3, #f8d7bd)}
+    .img.p2{background: linear-gradient(135deg, #d9e8ff, #d8f6e3)}
+    .img.p3{background: linear-gradient(135deg, #ffe8d6, #f5f0ff)}
+    .img.p4{background: linear-gradient(135deg, #fff4cc, #d8f6e3)}
+    .img.p5{background: linear-gradient(135deg, #e8f0ff, #ffe1cc)}
+    .img.p6{background: linear-gradient(135deg, #ffe1e1, #fff4cc)}
+    .img.p7{background: linear-gradient(135deg, #e5fff1, #dff0ff)}
+    .img.p8{background: linear-gradient(135deg, #fff0d9, #e8e2ff)}
+    .img.p9{background: linear-gradient(135deg, #e4ffe8, #ffe7f3)}
+    .stockTag{
+      margin-top: 10px;
+      display:inline-block;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      color: var(--greenDeep);
+      background: rgba(30,215,96,.16);
+      border:1px solid rgba(15,46,34,.16);
+      border-radius: 999px;
+      padding: 5px 9px;
+    }
+    .product .body{padding: 14px}
+    .product h3{margin:0 0 6px; font-size:14px; letter-spacing:.06em; text-transform:uppercase}
+    .product p{margin:0; color: var(--muted); font-size:13px; line-height:1.6}
+    .price{
+      margin-top: 10px;
+      font-weight:800;
+      letter-spacing:.04em;
+    }
+    .product .actions{
+      padding: 0 14px 14px;
+      display:flex;
+      gap:10px;
+    }
+
+    footer{
+      padding: 22px 0 34px;
+      border-top: 1px solid rgba(11,14,12,.10);
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footerBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .menuBtn{display:none}
+    @media (max-width: 980px){
+      .links{display:none}
+      .actions{min-width:auto}
+      .menuBtn{display:inline-flex}
+      .grid{grid-template-columns: repeat(2, 1fr)}
+    }
+    @media (max-width: 520px){
+      .grid{grid-template-columns: 1fr}
+    }
+
+    .sheet{position:fixed; inset:0; z-index:80; display:none}
+    .sheet.show{display:block}
+    .sheet .bg{position:absolute; inset:0; background: rgba(0,0,0,.22)}
+    .sheet .panel{
+      position:absolute; left:50%; top:14px; transform: translateX(-50%);
+      width:min(560px, 92vw);
+      border-radius: 18px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .sheet a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      margin-top: 10px;
+      color: var(--muted);
+    }
+    .sheet a:hover{background: rgba(255,255,255,.95); color: var(--ink)}
+
+    ::selection{background: rgba(30,215,96,.22)}
+  </style>
+</head>
+<body>
+
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="bg" data-close></div>
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+        <strong style="letter-spacing:.06em; text-transform:uppercase">Menu</strong>
+        <button class="btn" data-close aria-label="Fechar menu">Fechar</button>
+      </div>
+      <a href="index.html" data-close>Início</a>
+      <a href="socio.php" data-close>Clã Barbarus (Sócio)</a>
+      <a href="loja.html" data-close>Nossa Loja</a>
+      <a href="historia.html" data-close>História e Legado</a>
+      <a href="diretoria.html" data-close>Diretoria</a>
+      <a href="contato.html" data-close>Fale Conosco</a>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Página inicial">
+          <div class="logoWrap" aria-hidden="true">
+            <img alt="Logo Barbarus" src="img/logo.png" onerror="this.style.display='none'" />
+          </div>
+          <div class="brandText">
+            <h1>ATLÉTICA BARBARUS</h1>
+            <p>UFOB • Força. União. Coragem.</p>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Navegação principal">
+          <a href="socio.php">Clã Barbarus (Sócio)</a>
+          <a href="loja.html">Nossa loja</a>
+          <a href="historia.html">História e legado</a>
+          <a href="diretoria.html">Diretoria</a>
+          <a href="contato.html">Fale conosco</a>
+        </nav>
+
+        <div class="actions">
+          <button class="btn menuBtn" id="menuBtn" aria-label="Abrir menu">Menu</button>
+          <a class="btn btnAccent" href="contato.html">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="heroCard">
+          <div>
+            <h2>Loja Oficial Barbarus</h2>
+            <p>Produtos do clã, kits e pré-vendas especiais.</p>
+          </div>
+          <a class="btn btnAccent" href="contato.html">Pedir pelo WhatsApp</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="filters" aria-label="Categorias da loja">
+          <span class="chip">Destaques</span>
+          <span class="chip">Vestuário</span>
+          <span class="chip">Acessórios</span>
+          <span class="chip">Kits</span>
+          <span class="chip">Pré-venda</span>
+        </div>
+
+        <div class="grid">
+          <article class="product">
+            <div class="img p1">Camisa 2026</div>
+            <div class="body">
+              <h3>Camisa Oficial 2026</h3>
+              <p>Modelo da temporada com escudo clássico e gola premium.</p>
+              <div class="price">R$ 89,90</div>
+              <span class="stockTag">Mais vendido</span>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p2">Moletom</div>
+            <div class="body">
+              <h3>Moletom Barbarus</h3>
+              <p>Conforto total com tecido pesado e estampa em alto relevo.</p>
+              <div class="price">R$ 149,90</div>
+              <span class="stockTag">Edição 2026</span>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p3">Kit torcedor</div>
+            <div class="body">
+              <h3>Kit Torcedor</h3>
+              <p>Camisa + boné + copo oficial com desconto especial.</p>
+              <div class="price">R$ 199,90</div>
+              <span class="stockTag">Kit completo</span>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p4">Boné</div>
+            <div class="body">
+              <h3>Boné Trucker</h3>
+              <p>Clássico do clã com ajuste fácil e logo bordado.</p>
+              <div class="price">R$ 59,90</div>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p5">Copo térmico</div>
+            <div class="body">
+              <h3>Copo Térmico</h3>
+              <p>Para gelar no evento e manter o rolê no clima certo.</p>
+              <div class="price">R$ 39,90</div>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p6">Pré-venda</div>
+            <div class="body">
+              <h3>Pré-venda: Camisa Edição Limitada</h3>
+              <p>Reserva antecipada com entrega programada.</p>
+              <div class="price">R$ 109,90</div>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Reservar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p7">Caneca</div>
+            <div class="body">
+              <h3>Caneca Oficial</h3>
+              <p>Caneca em cerâmica com escudo Barbarus para o dia a dia.</p>
+              <div class="price">R$ 34,90</div>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p8">Tirante</div>
+            <div class="body">
+              <h3>Tirante Universitário</h3>
+              <p>Tirante com acabamento resistente e identidade do clã.</p>
+              <div class="price">R$ 24,90</div>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="img p9">Combo festa</div>
+            <div class="body">
+              <h3>Combo Festa Barbarus</h3>
+              <p>Copo + tirante + adesivos para chegar no evento no estilo.</p>
+              <div class="price">R$ 69,90</div>
+              <span class="stockTag">Oferta da semana</span>
+            </div>
+            <div class="actions">
+              <a class="btn btnAccent" href="contato.html">Comprar</a>
+              <a class="btn" href="contato.html">Detalhes</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footerBottom">
+          <span>© <span id="year"></span> Atlética Barbarus • UFOB</span>
+          <div style="display:flex; gap:14px">
+            <a href="https://instagram.com/ufobarbarus" target="_blank">Instagram</a>
+            <a href="mailto:aaabicet@gmail.com">Email</a>
+            <a href="contato.html">Contato</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const sheet = document.getElementById('sheet');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', ()=>{
+      sheet.classList.add('show');
+      sheet.setAttribute('aria-hidden','false');
+    });
+    sheet?.addEventListener('click', (e)=>{
+      if(e.target && e.target.matches('[data-close]')){
+        sheet.classList.remove('show');
+        sheet.setAttribute('aria-hidden','true');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

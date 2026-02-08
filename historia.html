@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlética Barbarus • UFOB — História e Legado</title>
+  <meta name="description" content="Conheça a história da Atlética Barbarus, marcos importantes, competições vencidas e conquistas do clã." />
+  <meta name="theme-color" content="#0F2E22" />
+
+  <style>
+    :root{
+      --bg: #F6F7F6;
+      --paper: #FFFFFF;
+      --ink: #0B0E0C;
+      --muted: rgba(11,14,12,.68);
+      --muted2: rgba(11,14,12,.52);
+      --line: rgba(11,14,12,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.10);
+      --shadow2: 0 12px 36px rgba(0,0,0,.10);
+      --green: #1ED760;
+      --greenDeep:#0F2E22;
+      --orange:#FF6A00;
+      --r: 16px;
+      --r2: 20px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial;
+      background:
+        radial-gradient(900px 520px at 12% -5%, rgba(30,215,96,.14), transparent 60%),
+        radial-gradient(900px 520px at 92% 10%, rgba(255,106,0,.12), transparent 62%),
+        linear-gradient(180deg, #FFFFFF 0%, var(--bg) 60%, #F3F4F3 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    button{font:inherit}
+
+    .container{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(246,247,246,.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .logoWrap{
+      width:64px; height:64px;
+      background: transparent;
+      display:grid; place-items:center;
+    }
+    .logoWrap img{width:100%; height:100%; object-fit:contain}
+    .brandText h1{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+    .brandText p{margin:3px 0 0; color:var(--muted2); font-size:12px}
+
+    .links{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center}
+    .links a{
+      font-size:14px;
+      font-weight: 700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .links a:hover{color:var(--ink); border-color: rgba(11,14,12,.12); background: rgba(255,255,255,.65)}
+
+    .actions{display:flex; align-items:center; gap:10px; justify-content:flex-end; min-width:220px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.75);
+      color: var(--ink);
+      cursor:pointer;
+      transition:.18s ease;
+      font-weight: 750;
+      letter-spacing:.02em;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.92); transform: translateY(-1px)}
+    .btnPrimary{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(15,46,34,1), rgba(15,46,34,.86));
+      box-shadow: 0 18px 52px rgba(15,46,34,.18);
+    }
+    .btnAccent{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(255,106,0,1), rgba(255,166,84,.95));
+      box-shadow: 0 18px 52px rgba(255,106,0,.18);
+    }
+
+    .hero{padding: 24px 0 12px}
+    .heroCard{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .heroTag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.8);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+    }
+    .hero h2{margin:10px 0 0; font-size:30px; line-height:1.05; letter-spacing:-.5px; text-transform:uppercase}
+    .hero p{margin:10px 0 0; color:var(--muted); line-height:1.7}
+
+    .statGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .stat{
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.84);
+      padding: 12px;
+    }
+    .stat strong{display:block; font-size:26px; line-height:1; color:var(--greenDeep)}
+    .stat span{display:block; margin-top:4px; color:var(--muted); font-size:12px; letter-spacing:.07em; text-transform:uppercase}
+
+    section{padding: 16px 0}
+    .sectionHead{margin-bottom:10px}
+    .sectionHead h3{margin:0; font-size:19px; letter-spacing:.06em; text-transform:uppercase}
+    .sectionHead p{margin:6px 0 0; color:var(--muted)}
+
+    .storyWrap{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .card{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+    }
+    .card p{margin:0 0 10px; color:var(--muted); line-height:1.7}
+
+    .timeline{
+      position:relative;
+      padding-left: 22px;
+      display:grid;
+      gap:10px;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:6px;
+      top:4px;
+      bottom:4px;
+      width:2px;
+      background: linear-gradient(180deg, rgba(30,215,96,.7), rgba(255,106,0,.7));
+    }
+    .milestone{
+      position:relative;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.88);
+      padding: 10px 12px;
+    }
+    .milestone::before{
+      content:"";
+      position:absolute;
+      left:-20px;
+      top:13px;
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(30,215,96,.18);
+    }
+    .milestone strong{font-size:12px; letter-spacing:.08em; text-transform:uppercase}
+    .milestone p{margin:4px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    .winGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .win{
+      border-radius: 16px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.86);
+      box-shadow: var(--shadow2);
+      padding: 14px;
+      min-height: 160px;
+    }
+    .win .label{
+      display:inline-flex;
+      font-size:10px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--greenDeep);
+      background: rgba(30,215,96,.16);
+      border:1px solid rgba(15,46,34,.16);
+      border-radius: 999px;
+      padding:4px 8px;
+    }
+    .win h4{margin:10px 0 6px; font-size:14px; letter-spacing:.04em; text-transform:uppercase}
+    .win p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    .tableWrap{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    table{width:100%; border-collapse:collapse}
+    thead th{
+      text-align:left;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted2);
+      padding:12px 14px;
+      border-bottom:1px solid rgba(11,14,12,.10);
+      background: rgba(15,46,34,.04);
+    }
+    tbody td{
+      padding:12px 14px;
+      border-bottom:1px solid rgba(11,14,12,.08);
+      font-size:14px;
+      color: var(--muted);
+    }
+    tbody tr:last-child td{border-bottom:0}
+
+    .hall{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      margin-top: 12px;
+    }
+    .hall .item{
+      border-radius: 14px;
+      border:1px dashed rgba(11,14,12,.14);
+      background: linear-gradient(135deg, rgba(30,215,96,.09), rgba(255,106,0,.08));
+      padding: 11px;
+      font-size:13px;
+      color: var(--muted);
+      min-height: 74px;
+    }
+
+    .cta{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.86);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom: 20px;
+    }
+    .cta strong{display:block; letter-spacing:.06em; text-transform:uppercase}
+    .cta p{margin:6px 0 0; color:var(--muted)}
+
+    footer{
+      padding: 22px 0 34px;
+      border-top: 1px solid rgba(11,14,12,.10);
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footerBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .menuBtn{display:none}
+    @media (max-width: 980px){
+      .links{display:none}
+      .actions{min-width:auto}
+      .menuBtn{display:inline-flex}
+      .heroCard{grid-template-columns:1fr}
+      .storyWrap{grid-template-columns:1fr}
+      .winGrid{grid-template-columns:1fr 1fr}
+      .hall{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 560px){
+      .winGrid{grid-template-columns:1fr}
+      .hall{grid-template-columns:1fr}
+      table, thead, tbody, tr, td, th{display:block}
+      thead{display:none}
+      tbody td{border-bottom:0; padding:8px 14px 0}
+      tbody tr{border-bottom:1px solid rgba(11,14,12,.10); padding:8px 0}
+      tbody tr:last-child{border-bottom:0}
+    }
+
+    .sheet{position:fixed; inset:0; z-index:80; display:none}
+    .sheet.show{display:block}
+    .sheet .bg{position:absolute; inset:0; background: rgba(0,0,0,.22)}
+    .sheet .panel{
+      position:absolute; left:50%; top:14px; transform: translateX(-50%);
+      width:min(560px, 92vw);
+      border-radius: 18px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .sheet a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      margin-top: 10px;
+      color: var(--muted);
+    }
+    .sheet a:hover{background: rgba(255,255,255,.95); color: var(--ink)}
+
+    ::selection{background: rgba(30,215,96,.22)}
+  </style>
+</head>
+<body>
+
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="bg" data-close></div>
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+        <strong style="letter-spacing:.06em; text-transform:uppercase">Menu</strong>
+        <button class="btn" data-close aria-label="Fechar menu">Fechar</button>
+      </div>
+      <a href="index.html" data-close>Início</a>
+      <a href="socio.php" data-close>Clã Barbarus (Sócio)</a>
+      <a href="loja.php" data-close>Nossa Loja</a>
+      <a href="historia.html" data-close>História e Legado</a>
+      <a href="diretoria.html" data-close>Diretoria</a>
+      <a href="contato.html" data-close>Fale Conosco</a>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Página inicial">
+          <div class="logoWrap" aria-hidden="true">
+            <img alt="Logo Barbarus" src="img/logo.png" onerror="this.style.display='none'" />
+          </div>
+          <div class="brandText">
+            <h1>ATLÉTICA BARBARUS</h1>
+            <p>UFOB • Força. União. Coragem.</p>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Navegação principal">
+          <a href="socio.php">Clã Barbarus (Sócio)</a>
+          <a href="loja.php">Nossa loja</a>
+          <a href="historia.html">História e legado</a>
+          <a href="diretoria.html">Diretoria</a>
+          <a href="contato.html">Fale conosco</a>
+        </nav>
+
+        <div class="actions">
+          <button class="btn menuBtn" id="menuBtn" aria-label="Abrir menu">Menu</button>
+          <a class="btn btnPrimary" href="contato.html">Enviar registro</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero" aria-label="Resumo da história da Atlética Barbarus">
+        <div class="heroCard">
+          <div>
+            <span class="heroTag">História e Legado</span>
+            <h2>Da fundação ao presente: a caminhada do clã Barbarus</h2>
+            <p>
+              A Atlética Barbarus representa o Bacharelado Interdisciplinar em Ciência e Tecnologia (BICT)
+              da UFOB. Esta página reúne nossa trajetória, marcos, conquistas e espaço para manter o legado vivo
+              a cada nova gestão.
+            </p>
+          </div>
+          <div class="statGrid" aria-label="Números da trajetória">
+            <div class="stat"><strong>BICT</strong><span>Curso representado</span></div>
+            <div class="stat"><strong>10+</strong><span>Eventos marcantes</span></div>
+            <div class="stat"><strong>20+</strong><span>Competições disputadas</span></div>
+            <div class="stat"><strong>100%</strong><span>Raça Barbarus</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="História da Atlética">
+        <div class="sectionHead">
+          <h3>Nossa história</h3>
+          <p>Origem, identidade e crescimento dentro da UFOB.</p>
+        </div>
+        <div class="storyWrap">
+          <article class="card">
+            <p>
+              A Barbarus nasceu da vontade dos estudantes do BICT de construir uma atlética forte,
+              com identidade própria e protagonismo universitário. Desde os primeiros encontros,
+              a proposta foi unir esporte, integração e cultura acadêmica em um só movimento.
+            </p>
+            <p>
+              Com o grito “O machado vai cantar!”, o clã consolidou seu espaço em eventos da universidade,
+              promovendo ações de acolhimento, festas temáticas e participação ativa em torneios.
+              A força da Barbarus sempre esteve na comunidade: alunos, egressos e parceiros.
+            </p>
+            <p>
+              Hoje, além de competir, a atlética atua na formação de liderança estudantil,
+              organiza projetos sociais e mantém viva uma cultura de disciplina, união e coragem.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="timeline" aria-label="Linha do tempo da Barbarus">
+              <div class="milestone">
+                <strong>Fundação</strong>
+                <p>Criação da atlética pelos estudantes do BICT com foco em representatividade e integração.</p>
+              </div>
+              <div class="milestone">
+                <strong>Primeiro grande evento</strong>
+                <p>Participação organizada em competição universitária e início da tradição competitiva do clã.</p>
+              </div>
+              <div class="milestone">
+                <strong>Expansão de projetos</strong>
+                <p>Entrada em novas modalidades, ações sociais e fortalecimento da base de torcedores.</p>
+              </div>
+              <div class="milestone">
+                <strong>Consolidação</strong>
+                <p>Atlética reconhecida no campus por gestão ativa, calendário forte e presença em campeonatos.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section aria-label="Competições vencidas">
+        <div class="sectionHead">
+          <h3>Competições vencidas</h3>
+          <p>Espaço para registrar os títulos oficiais da Barbarus.</p>
+        </div>
+        <div class="winGrid">
+          <article class="win">
+            <span class="label">Título</span>
+            <h4>Campeonato de Truco</h4>
+            <p><strong>Ano:</strong> 20XX<br><strong>Evento:</strong> Interatléticas UFOB<br><strong>Status:</strong> Campeã</p>
+          </article>
+          <article class="win">
+            <span class="label">Título</span>
+            <h4>Copa de Vôlei Misto</h4>
+            <p><strong>Ano:</strong> 20XX<br><strong>Evento:</strong> Jogos Universitários<br><strong>Status:</strong> Campeã</p>
+          </article>
+          <article class="win">
+            <span class="label">Título</span>
+            <h4>Torneio de Futebol Society</h4>
+            <p><strong>Ano:</strong> 20XX<br><strong>Evento:</strong> Semana Acadêmica<br><strong>Status:</strong> Campeã</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-label="Registro de campanhas e resultados">
+        <div class="sectionHead">
+          <h3>Campanhas e resultados</h3>
+          <p>Área para manter histórico anual de desempenho.</p>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Ano</th>
+                <th>Competição</th>
+                <th>Modalidade</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>20XX</td><td>Interatléticas UFOB</td><td>Truco</td><td>1º lugar</td></tr>
+              <tr><td>20XX</td><td>Jogos Universitários</td><td>Vôlei</td><td>1º lugar</td></tr>
+              <tr><td>20XX</td><td>Copa Integração</td><td>Futebol</td><td>Semifinal</td></tr>
+              <tr><td>20XX</td><td>Torneio Solidário</td><td>Misto</td><td>Destaque social</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-label="Marcos importantes">
+        <div class="sectionHead">
+          <h3>Marcos importantes</h3>
+          <p>Fatos históricos que definem a identidade da atlética.</p>
+        </div>
+        <div class="hall">
+          <div class="item"><strong>Primeira gestão eleita</strong><br>Estruturação da diretoria e organização interna.</div>
+          <div class="item"><strong>Primeira camisa oficial</strong><br>Lançamento do uniforme que virou símbolo do clã.</div>
+          <div class="item"><strong>Primeiro título coletivo</strong><br>Vitória que consolidou a força competitiva da Barbarus.</div>
+          <div class="item"><strong>Primeira ação social</strong><br>Início do compromisso da atlética com impacto comunitário.</div>
+          <div class="item"><strong>Projeto de calouros</strong><br>Integração responsável e acolhimento dos ingressantes.</div>
+          <div class="item"><strong>Parcerias institucionais</strong><br>Apoios que fortaleceram eventos e campeonatos.</div>
+          <div class="item"><strong>Ampliação de modalidades</strong><br>Entrada em novas frentes esportivas e culturais.</div>
+          <div class="item"><strong>Meta futura</strong><br>Espaço para o próximo grande marco da história.</div>
+        </div>
+      </section>
+
+      <section class="cta" aria-label="Atualização do acervo histórico">
+        <div>
+          <strong>Tem registro antigo da Barbarus?</strong>
+          <p>Envie fotos, datas e resultados para atualizarmos este acervo histórico oficial.</p>
+        </div>
+        <a class="btn btnAccent" href="contato.html">Enviar material</a>
+      </section>
+
+      <footer>
+        <div class="footerBottom">
+          <span>© <span id="year"></span> Atlética Barbarus • UFOB</span>
+          <div style="display:flex; gap:14px">
+            <a href="https://instagram.com/ufobarbarus" target="_blank">Instagram</a>
+            <a href="mailto:aaabicet@gmail.com">Email</a>
+            <a href="contato.html">Contato</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const sheet = document.getElementById('sheet');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', ()=>{
+      sheet.classList.add('show');
+      sheet.setAttribute('aria-hidden','false');
+    });
+    sheet?.addEventListener('click', (e)=>{
+      if(e.target && e.target.matches('[data-close]')){
+        sheet.classList.remove('show');
+        sheet.setAttribute('aria-hidden','true');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

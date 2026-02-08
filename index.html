@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlética Barbarus • UFOB — Página Inicial</title>
+  <meta name="description" content="Loja oficial, história e legado, diretoria e contato da Atlética Barbarus (UFOB). Força. União. Coragem." />
+  <meta name="theme-color" content="#0F2E22" />
+
+  <!-- Open Graph (para prévia ao enviar link) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Atlética Barbarus • UFOB" />
+  <meta property="og:description" content="Força. União. Coragem. Acesse nossa loja, conheça nossa história e fale com a diretoria." />
+  <meta property="og:image" content="https://example.com/og-barbarus.jpg" />
+  <meta property="og:url" content="https://example.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Atlética Barbarus • UFOB" />
+  <meta name="twitter:description" content="Força. União. Coragem. Loja, história e contato." />
+  <meta name="twitter:image" content="https://example.com/og-barbarus.jpg" />
+
+  <style>
+    /* ==========================================
+       BARBARUS — LIGHT SERIOUS (Home preview)
+       - Claro, receptivo, sério
+       - Verde + Laranja como identidade
+       - Responsivo (cel/tablet/desktop)
+       ========================================== */
+
+    :root{
+      /* Base */
+      --bg: #F6F7F6;
+      --paper: #FFFFFF;
+      --ink: #0B0E0C;
+      --muted: rgba(11,14,12,.68);
+      --muted2: rgba(11,14,12,.52);
+      --line: rgba(11,14,12,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.10);
+      --shadow2: 0 12px 36px rgba(0,0,0,.10);
+
+      /* Brand */
+      --green: #1ED760;     /* Verde Barbarus */
+      --greenDeep:#0F2E22;  /* Verde profundo */
+      --orange:#FF6A00;     /* Laranja Barbarus */
+
+      /* UI */
+      --r: 16px;            /* sério (sem “fofinho”) */
+      --r2: 20px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial;
+      background:
+        radial-gradient(900px 520px at 12% -5%, rgba(30,215,96,.14), transparent 60%),
+        radial-gradient(900px 520px at 92% 10%, rgba(255,106,0,.12), transparent 62%),
+        linear-gradient(180deg, #FFFFFF 0%, var(--bg) 60%, #F3F4F3 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    button,input{font:inherit}
+
+    .container{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+
+    /* --- topbar --- */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(246,247,246,.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+
+    /* espaço para LOGO real (trocar imagem dentro) */
+    .logoWrap{
+      width:84px; height:84px;
+      border-radius: 0;
+      border:0;
+      background: transparent;
+      box-shadow: none;
+      overflow:visible;
+      display:grid; place-items:center;
+    }
+    .logoWrap img{
+      width: 100%; height: 100%; object-fit:contain;
+      filter: none;
+    }
+    .brandText h1{
+      margin:0;
+      font-size:18px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+    .brandText p{margin:3px 0 0; color:var(--muted2); font-size:12px}
+
+    .links{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center}
+    .links a{
+      font-size:15px;
+      font-weight: 700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+      padding: 9px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .links a:hover{color:var(--ink); border-color: rgba(11,14,12,.12); background: rgba(255,255,255,.65)}
+
+    .actions{display:flex; align-items:center; gap:10px; justify-content:flex-end; min-width:220px}
+    .search{
+      width: 260px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.75);
+      outline:none;
+      transition:.18s ease;
+    }
+    .search:focus{border-color: rgba(15,46,34,.40); box-shadow: 0 0 0 4px rgba(30,215,96,.14)}
+
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.75);
+      color: var(--ink);
+      cursor:pointer;
+      transition:.18s ease;
+      font-weight: 750;
+      letter-spacing:.02em;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.92); transform: translateY(-1px)}
+
+    .btnPrimary{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(15,46,34,1), rgba(15,46,34,.86));
+      box-shadow: 0 18px 52px rgba(15,46,34,.18);
+    }
+    .btnPrimary:hover{filter:saturate(1.05) brightness(1.02)}
+
+    .btnAccent{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(255,106,0,1), rgba(255,166,84,.95));
+      box-shadow: 0 18px 52px rgba(255,106,0,.18);
+    }
+
+    .icon{width:18px; height:18px; opacity:.92}
+
+    /* --- hero --- */
+    .hero{padding: 18px 0 10px;}
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 14px;
+      align-items:stretch;
+    }
+
+    .card{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    /* ================= CAROUSEL ================= */
+    .carousel{
+      position:relative;
+      min-height: 460px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* ================= INTRO ================= */
+    .intro{
+      min-height: 460px;
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .introTitle h2{
+      margin:0;
+      font-size: 28px;
+      letter-spacing:-0.6px;
+      text-transform:uppercase;
+      line-height:1.05;
+    }
+    .introTitle p{margin:8px 0 0; color: var(--muted); font-size:14px; line-height:1.7}
+    .introBody{
+      border-top:1px solid rgba(11,14,12,.08);
+      padding-top: 12px;
+    }
+    .introBody p{margin:0 0 10px; color: var(--muted); font-size:14px; line-height:1.7}
+    .introList{
+      margin:0; padding-left:18px;
+      color: var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+    .introFoot{
+      margin-top:auto;
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-start;
+    }
+
+    .carouselTop{
+      padding: 16px 16px 10px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      color: var(--muted);
+      font-size:12px;
+      letter-spacing:.04em;
+      white-space:nowrap;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:999px;
+      background: linear-gradient(180deg, var(--green), rgba(30,215,96,.35));
+      box-shadow: 0 0 0 4px rgba(30,215,96,.16);
+    }
+
+    .carouselViewport{
+      position:relative;
+      flex:1;
+      border-top:1px solid rgba(11,14,12,.08);
+      background:
+        radial-gradient(560px 320px at 18% 20%, rgba(30,215,96,.16), transparent 60%),
+        radial-gradient(560px 320px at 82% 30%, rgba(255,106,0,.12), transparent 60%),
+        linear-gradient(180deg, rgba(15,46,34,.12), rgba(255,255,255,.55));
+    }
+
+    /* Slides: use imagens reais depois (data-src) */
+    .slide{
+      position:absolute; inset:0;
+      opacity:0;
+      transform: scale(1.02);
+      transition: opacity .35s ease, transform .35s ease;
+      display:grid;
+      place-items:center;
+      padding: 16px;
+    }
+    .slide.active{opacity:1; transform: scale(1)}
+
+    .imgFrame{
+      width:100%; height:100%;
+      border-radius: 18px;
+      border:1px solid rgba(11,14,12,.12);
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      position:relative;
+      background:
+        linear-gradient(135deg, rgba(15,46,34,.10), rgba(255,106,0,.10)),
+        repeating-linear-gradient(135deg, rgba(11,14,12,.04) 0 12px, rgba(11,14,12,.02) 12px 24px);
+    }
+
+    .imgFrame img{
+      width:100%; height:100%;
+      object-fit:cover;
+      object-position: center;
+      display:block;
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    /* Placeholder quando não tem imagem */
+    .ph{
+      position:absolute; inset:0;
+      display:flex;
+      align-items:flex-end;
+      padding: 18px;
+      text-align:left;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%);
+    }
+    .ph strong{
+      display:block;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: rgba(255,255,255,.95);
+      text-shadow: 0 6px 16px rgba(0,0,0,.45);
+    }
+    .ph span{
+      display:block;
+      margin-top:6px;
+      font-size:14px;
+      line-height:1.6;
+      color: rgba(255,255,255,.92);
+      text-shadow: 0 6px 16px rgba(0,0,0,.45);
+    }
+
+    .carouselControls{
+      position:absolute;
+      left: 14px; right: 14px; bottom: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      pointer-events:none;
+    }
+
+    .ctrlGroup{
+      display:flex; gap:10px; align-items:center;
+      pointer-events:auto;
+    }
+
+    .ctrlBtn{
+      width:42px; height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.82);
+      cursor:pointer;
+      display:grid; place-items:center;
+      transition:.18s ease;
+    }
+    .ctrlBtn:hover{background: rgba(255,255,255,.96); transform: translateY(-1px)}
+
+    .dots{display:flex; gap:8px; align-items:center; pointer-events:auto}
+    .dotBtn{
+      width:10px; height:10px;
+      border-radius:999px;
+      border:1px solid rgba(11,14,12,.22);
+      background: rgba(255,255,255,.65);
+      cursor:pointer;
+      transition:.18s ease;
+    }
+    .dotBtn.active{background: linear-gradient(135deg, var(--green), var(--orange)); border-color: rgba(11,14,12,.10); transform: scale(1.05)}
+
+    .carouselCaption{
+      padding: 12px 16px 16px;
+      display:flex;
+      flex-direction: column;
+      align-items:flex-start;
+      gap: 12px;
+      border-top:1px solid rgba(11,14,12,.08);
+      background: rgba(255,255,255,.70);
+    }
+
+    .captionText h2{
+      margin:0;
+      font-size: 28px;
+      letter-spacing: -0.8px;
+      text-transform:uppercase;
+      line-height:1.05;
+    }
+    .captionText h2 .accent{
+      background: linear-gradient(90deg, rgba(15,46,34,1), rgba(255,106,0,1));
+      -webkit-background-clip:text; background-clip:text;
+      color:transparent;
+    }
+    .captionText p{margin:8px 0 0; color: var(--muted); font-size:14px; line-height:1.7; max-width: 62ch}
+
+    .captionActions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-start}
+
+    /* ========== Highlights side card ========== */
+    .side{
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .sideTitle{
+      margin:0;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: var(--muted2);
+    }
+
+    .note{
+      border-radius: var(--r);
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      padding: 14px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .note::after{
+      content:"";
+      position:absolute; right:-26px; top:-26px;
+      width:120px; height:120px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(30,215,96,.18), rgba(255,106,0,.14));
+      transform: rotate(10deg);
+      opacity:.9;
+    }
+
+    .note h3{
+      margin:0 0 6px;
+      font-size: 14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .note p{margin:0; color: var(--muted); font-size:13px; line-height:1.65}
+    .sideCarousel{
+      margin-top:10px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.82);
+      overflow:hidden;
+      position:relative;
+    }
+    .sideViewport{
+      min-height: 230px;
+      position:relative;
+      background:
+        radial-gradient(180px 120px at 18% 10%, rgba(30,215,96,.13), transparent 60%),
+        radial-gradient(180px 120px at 88% 90%, rgba(255,106,0,.11), transparent 60%);
+    }
+    .sideSlide{
+      position:absolute; inset:0;
+      opacity:0;
+      transform: translateX(6px);
+      transition: opacity .25s ease, transform .25s ease;
+      padding: 12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .sideSlide.active{opacity:1; transform: translateX(0)}
+    .sideSlide img{
+      width:100%;
+      height:120px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 12px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.94);
+      padding: 6px;
+    }
+    .sideSlide strong{
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .sideSlide p{
+      color: var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .sideDots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      padding: 8px 10px 2px;
+    }
+    .sideDot{
+      width:9px; height:9px;
+      border-radius:999px;
+      border:1px solid rgba(11,14,12,.24);
+      background: rgba(255,255,255,.72);
+      cursor:pointer;
+    }
+    .sideDot.active{
+      background: linear-gradient(135deg, var(--green), var(--orange));
+      border-color: rgba(11,14,12,.10);
+      transform: scale(1.05);
+    }
+    .sideCta{padding: 0 10px 10px}
+    .priceMark{
+      color: var(--greenDeep);
+      font-weight: 900;
+      font-size: 16px;
+      padding: 1px 6px;
+      border-radius: 8px;
+      background: rgba(30,215,96,.18);
+      border: 1px solid rgba(15,46,34,.14);
+      white-space: nowrap;
+    }
+
+    .miniGrid{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    .kpi{
+      border-radius: var(--r);
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.72);
+      padding: 12px;
+    }
+    .kpi strong{display:block; font-size:12px; letter-spacing:.08em; text-transform:uppercase}
+    .kpi small{display:block; margin-top:4px; color: var(--muted2); line-height:1.4}
+
+    /* ========== Section blocks below hero ========== */
+    section{padding: 18px 0;}
+
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 14px; margin-bottom: 12px;
+    }
+    .sectionHead h2{margin:0; font-size:18px; letter-spacing:.06em; text-transform:uppercase}
+    .sectionHead p{margin:0; color: var(--muted); max-width: 70ch; font-size:13.5px; line-height:1.65}
+    .aboutSection .sectionHead{
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border-radius: var(--r2);
+      border:1px solid rgba(11,14,12,.12);
+      background: linear-gradient(135deg, rgba(15,46,34,.10), rgba(255,106,0,.10));
+      box-shadow: var(--shadow2);
+    }
+    .aboutSection .sectionHead h2{
+      font-size:22px;
+      letter-spacing:.09em;
+    }
+    .aboutSection .sectionHead p{
+      color: rgba(11,14,12,.78);
+      font-weight: 700;
+    }
+    .aboutSection .intro{
+      border-color: rgba(15,46,34,.22);
+      box-shadow: 0 24px 60px rgba(15,46,34,.12);
+      background:
+        radial-gradient(600px 220px at 0% 0%, rgba(30,215,96,.08), transparent 60%),
+        radial-gradient(600px 220px at 100% 0%, rgba(255,106,0,.08), transparent 60%),
+        rgba(255,255,255,.86);
+    }
+
+    .grid4{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px}
+    .tile{
+      border-radius: var(--r2);
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow2);
+      padding: 14px;
+      min-height: 120px;
+      position:relative;
+      overflow:hidden;
+      transition:.18s ease;
+    }
+    .tile:hover{transform: translateY(-2px); background: rgba(255,255,255,.92)}
+
+    .tile .corner{
+      position:absolute; right:-22px; bottom:-22px;
+      width:96px; height:96px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(15,46,34,.14), rgba(255,106,0,.12));
+      transform: rotate(10deg);
+      opacity:.9;
+    }
+    .tile h3{margin:0 0 8px; font-size:13px; letter-spacing:.08em; text-transform:uppercase}
+    .tile p{margin:0; color: var(--muted); font-size:13px; line-height:1.6}
+
+    /* quick links bar */
+    .quick{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .quick a{
+      flex: 1 1 210px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding: 12px 14px;
+      border-radius: var(--r2);
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow2);
+      transition:.18s ease;
+    }
+    .quick a:hover{transform: translateY(-2px); background: rgba(255,255,255,.92)}
+    .quick strong{font-size:13px; letter-spacing:.06em; text-transform:uppercase}
+    .quick span{color: var(--muted2); font-size:13px}
+
+    footer{
+      padding: 22px 0 34px;
+      border-top: 1px solid rgba(11,14,12,.10);
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footerTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+    .sponsors{
+      flex: 1 1 520px;
+      padding: 14px;
+      border-radius: var(--r2);
+      border:1px dashed rgba(11,14,12,.18);
+      background: rgba(255,255,255,.7);
+    }
+    .sponsors h4{
+      margin:0 0 10px;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+    }
+    .sponsorGrid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(110px, 1fr));
+      gap:10px;
+    }
+    .sponsorItem{
+      height:48px;
+      border-radius: 12px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.85);
+      display:grid;
+      place-items:center;
+      color: var(--muted2);
+      font-size:11px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .footerBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .instaSlot{
+      padding: 8px 10px;
+      border-radius: 12px;
+      border:1px dashed rgba(11,14,12,.18);
+      background: rgba(255,255,255,.7);
+      color: var(--muted);
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:11px;
+    }
+
+    /* --- Mobile / Tablet --- */
+    .menuBtn{display:none}
+
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr;}
+      .links{display:none}
+      .search{display:none}
+      .actions{min-width:auto}
+      .menuBtn{display:inline-flex}
+      .grid4{grid-template-columns: repeat(2, 1fr)}
+      .captionText h2{font-size: 24px}
+      .carousel{min-height: 320px}
+      .sponsorGrid{grid-template-columns: repeat(2, minmax(120px, 1fr))}
+    }
+    @media (max-width: 520px){
+      .grid4{grid-template-columns: 1fr}
+      .captionText h2{font-size: 21px}
+      .miniGrid{grid-template-columns: 1fr}
+      .carousel{min-height: 280px}
+      .ctrlBtn{width:40px; height:40px}
+      .imgFrame img{object-position: 50% 30%}
+      .ph{padding: 14px}
+      .ph strong{font-size:12px}
+      .ph span{font-size:13px}
+      .sponsorGrid{grid-template-columns: 1fr}
+    }
+
+    /* Mobile menu sheet */
+    .sheet{position:fixed; inset:0; z-index:80; display:none}
+    .sheet.show{display:block}
+    .sheet .bg{position:absolute; inset:0; background: rgba(0,0,0,.22)}
+    .sheet .panel{
+      position:absolute; left:50%; top:14px; transform: translateX(-50%);
+      width:min(560px, 92vw);
+      border-radius: 18px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .sheet a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      margin-top: 10px;
+      color: var(--muted);
+    }
+    .sheet a:hover{background: rgba(255,255,255,.95); color: var(--ink)}
+
+    ::selection{background: rgba(30,215,96,.22)}
+  </style>
+</head>
+<body>
+
+  <!-- Mobile menu sheet -->
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="bg" data-close></div>
+      <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+        <strong style="letter-spacing:.06em; text-transform:uppercase">Menu</strong>
+        <button class="btn" data-close aria-label="Fechar menu">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          Fechar
+        </button>
+      </div>
+      <a href="#" data-close>Início</a>
+      <a href="socio.php" data-close>Clã Barbarus (Sócio)</a>
+      <a href="loja.php" data-close>Nossa Loja</a>
+      <a href="historia.html" data-close>História e Legado</a>
+      <a href="diretoria.html" data-close>Diretoria</a>
+      <a href="contato.html" data-close>Fale Conosco</a>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#" aria-label="Página inicial">
+          <div class="logoWrap" aria-hidden="true">
+            <!-- Troque por: <img src="assets/logo.png" alt="Logo Barbarus"> -->
+            <img alt="Logo Barbarus" src="img/logo.png" onerror="this.style.display='none'" />
+          </div>
+          <div class="brandText">
+            <h1>ATLÉTICA BARBARUS</h1>
+            <p>UFOB • Força. União. Coragem.</p>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Navegação principal">
+          <a href="socio.php">Sócio</a>
+          <a href="loja.php">Loja</a>
+          <a href="historia.html">História</a>
+          <a href="diretoria.html">Diretoria</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+
+        <div class="actions">
+          
+
+          <button class="btn menuBtn" id="menuBtn" aria-label="Abrir menu">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            Menu
+          </button>
+
+          
+
+          <a class="btn btnAccent" href="loja.php">
+            Ver produtos
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- HERO com CARROSSEL + highlights -->
+      <section class="hero">
+        <div class="heroGrid">
+
+          <!-- Carrossel (começo) -->
+          <div class="card carousel" aria-label="Carrossel de imagens da atlética">
+            <div class="carouselTop">
+              <div class="badge"><span class="dot"></span> Bem-vindo ao clã — aqui é Barbarus.</div>
+            </div>
+
+            <div class="carouselViewport">
+              <!-- Slide 1 -->
+              <div class="slide active" data-i="0">
+                <div class="imgFrame">
+                  <img alt="Atlética Barbarus em evento" src="img/IMG_4590.jpg" onerror="this.remove();" />
+                  <div class="ph">
+                    <div>
+                      <strong>Força. União. Coragem.</strong>
+                      <span>Um clã que transforma cada evento em conquista.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="slide" data-i="1">
+                <div class="imgFrame">
+                  <img alt="Torcida da Barbarus" src="img/IMG_4898.jpg" onerror="this.remove();" />
+                  <div class="ph">
+                    <div>
+                      <strong>O machado vai cantar!</strong>
+                      <span>Energia e voz que fazem a Barbarus ser lembrada.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="slide" data-i="2">
+                <div class="imgFrame">
+                  <img alt="Integração e projetos sociais" src="img/IMG_4893.jpg" onerror="this.remove();" />
+                  <div class="ph">
+                    <div>
+                      <strong>Somos irmandade</strong>
+                      <span>Integração, respeito e presença dentro e fora da UFOB.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carouselControls" aria-hidden="false">
+                <div class="ctrlGroup">
+                  <button class="ctrlBtn" id="prev" aria-label="Imagem anterior">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <button class="ctrlBtn" id="next" aria-label="Próxima imagem">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                  </button>
+                </div>
+
+                <div class="dots" aria-label="Indicadores do carrossel">
+                  <button class="dotBtn active" data-dot="0" aria-label="Ir para imagem 1"></button>
+                  <button class="dotBtn" data-dot="1" aria-label="Ir para imagem 2"></button>
+                  <button class="dotBtn" data-dot="2" aria-label="Ir para imagem 3"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="carouselCaption">
+              <div class="captionText">
+                <h2>Atlética <span class="accent">Barbarus</span> • UFOB</h2>
+                <p>
+                  Um espaço para a comunidade: jogos, eventos, integração e projetos.
+                  Aqui você encontra nossos destaques, acesso rápido às páginas e a nossa loja oficial.
+                </p>
+              </div>
+              <div class="captionActions">
+                <a class="btn btnAccent" href="loja.php">Comprar na loja</a>
+                <a class="btn" href="contato.html">Fale conosco</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Destaques / considerações (lado direito) -->
+          <aside class="card side" aria-label="Benefícios do sócio torcedor">
+            <p class="sideTitle">Sócio torcedor</p>
+
+            <div class="note">
+              <h3>🛡 Benefícios de ser sócio torcedor</h3>
+              <p>Plano único de <span class="priceMark">R$ 15,00</span> anuais com vantagens diretas para quem fortalece o clã.</p>
+              <div class="sideCarousel" aria-label="Carrossel de vantagens do sócio torcedor">
+                <div class="sideViewport">
+                  <article class="sideSlide active" data-side-slide="0">
+                    <img src="img/des.png" alt="Descontos na loja oficial" onerror="this.remove();" />
+                    <strong>Descontos na loja</strong>
+                    <p>Sócio torcedor tem acesso a condições especiais e campanhas exclusivas da Barbarus.</p>
+                  </article>
+                  <article class="sideSlide" data-side-slide="1">
+                    <img src="img/participar.png" alt="Participação na atlética" onerror="this.remove();" />
+                    <strong>Participação ativa</strong>
+                    <p>Faça parte dos projetos e decisões que movem o clã durante o ano.</p>
+                  </article>
+                  <article class="sideSlide" data-side-slide="2">
+                    <img src="img/ajudar.png" alt="Apoio aos eventos e campeonatos" onerror="this.remove();" />
+                    <strong>Apoio aos eventos</strong>
+                    <p>Sua associação fortalece treinos, campeonatos e a estrutura da atlética.</p>
+                  </article>
+                </div>
+                <div class="sideDots" aria-label="Indicadores das vantagens">
+                  <button class="sideDot active" data-side-dot="0" aria-label="Ver vantagem 1"></button>
+                  <button class="sideDot" data-side-dot="1" aria-label="Ver vantagem 2"></button>
+                  <button class="sideDot" data-side-dot="2" aria-label="Ver vantagem 3"></button>
+                </div>
+                <div class="sideCta">
+                  <a class="btn btnPrimary" href="socio.php" style="width:100%;justify-content:center">Quero ser sócio</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- Apresentação da atlética -->
+      <section class="aboutSection" aria-label="Apresentação da Atlética Barbarus">
+        <div class="sectionHead">
+          <div>
+            <h2>Quem somos</h2>
+            <p>A.A.A.B.I.C.T. • Atlética Barbarus • BICT</p>
+          </div>
+        </div>
+
+        <div class="card intro">
+          <div class="introTitle">
+            <h2>Força. União. Coragem.</h2>
+            <p>
+              A Atlética Barbarus representa o Bacharelado Interdisciplinar em Ciência e Tecnologia da UFOB (BICT).
+              Somos uma irmandade com espírito viking e o grito de guerra “O machado vai cantar!”,
+              presente em cada competição, evento e conquista.
+            </p>
+          </div>
+
+          <div class="introBody">
+            <p>
+              Nossa história é marcada por luta, resistência e conquista. Surgimos para conquistar
+              espaço dentro da UFOB e hoje somos referência, sem esquecer o caminho que percorremos.
+            </p>
+            <p>
+              Inspirados pela mitologia nórdica, nossas ações refletem força, resistência e espírito
+              de equipe. As cores laranja, verde e preto representam a energia dos nossos corpos,
+              a força das nossas raízes e a coragem que nos move.
+            </p>
+            <p><strong>O que fazemos:</strong></p>
+            <ul class="introList">
+              <li>Eventos universitários épicos: calouradas e festas como a REGnarok.</li>
+              <li>Competições e torneios: truco, vôlei, futebol e mais.</li>
+              <li>Trote temático e integração dos calouros.</li>
+              <li>Ações solidárias e projetos sociais.</li>
+              <li>Engajamento estudantil e fortalecimento do BICT.</li>
+            </ul>
+            <p>
+              <strong>Nossa missão:</strong> levar o nome da Barbarus a Valhalla e além,
+              promovendo integração, protagonismo estudantil e uma experiência universitária marcante.
+            </p>
+          </div>
+
+          <div class="introFoot">
+            <a class="btn btnAccent" href="loja.php">Nossa loja</a>
+            <a class="btn" href="contato.html">Fale conosco</a>
+            <a class="btn" href="historia.html">História e legado</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Links rápidos (mais “receptivo”) -->
+      <section aria-label="Acesso rápido">
+        <div class="sectionHead">
+          <div>
+            <h2>Acesso rápido</h2>
+            <p>Atalhos para as páginas principais do site.</p>
+          </div>
+        </div>
+        <div class="quick">
+          <a href="socio.php">
+            <strong>Clã Barbarus (Sócio)</strong>
+            <span>Planos e benefícios</span>
+          </a>
+          <a href="loja.php">
+            <strong>Nossa loja</strong>
+            <span>Produtos oficiais</span>
+          </a>
+          <a href="historia.html">
+            <strong>História e legado</strong>
+            <span>Quem somos</span>
+          </a>
+          <a href="diretoria.html">
+            <strong>Diretoria</strong>
+            <span>Gestão e equipes</span>
+          </a>
+          <a href="contato.html">
+            <strong>Fale conosco</strong>
+            <span>Instagram, e-mail, WhatsApp</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Cards de “destaques” do site/atlética (abaixo) -->
+      <section aria-label="Destaques da Barbarus">
+        <div class="sectionHead">
+          <div>
+            <h2>Destaques da atlética</h2>
+            <p>Blocos para você preencher com o que a Barbarus faz: eventos, esportes, integração, ações sociais.</p>
+          </div>
+        </div>
+
+        <div class="grid4">
+          <div class="tile">
+            <div class="corner" aria-hidden="true"></div>
+            <h3>Eventos</h3>
+            <p>Calouradas, festas temáticas e integração do clã.</p>
+          </div>
+          <div class="tile">
+            <div class="corner" aria-hidden="true"></div>
+            <h3>Competições</h3>
+            <p>Truco, vôlei, futebol e outras modalidades.</p>
+          </div>
+          <div class="tile">
+            <div class="corner" aria-hidden="true"></div>
+            <h3>Trote temático</h3>
+            <p>Recepção dos calouros com energia e respeito.</p>
+          </div>
+          <div class="tile">
+            <div class="corner" aria-hidden="true"></div>
+            <h3>Ações sociais</h3>
+            <p>Projetos solidários e apoio à comunidade.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footerTop">
+          <div class="sponsors">
+            <h4>Espaço para patrocinadores</h4>
+            <div class="sponsorGrid">
+              <div class="sponsorItem">Logo 1</div>
+              <div class="sponsorItem">Logo 2</div>
+              <div class="sponsorItem">Logo 3</div>
+              <div class="sponsorItem">Logo 4</div>
+            </div>
+          </div>
+        </div>
+        <div class="footerBottom">
+          <span>© <span id="year"></span> Atlética Barbarus • UFOB</span>
+          <div style="display:flex; gap:14px">
+            <a href="https://instagram.com/ufobarbarus" target="_blank">Instagram</a>
+            <a href="mailto:aaabicet@gmail.com">Email</a>
+            <a href="contato.html">Contato</a>
+          </div>
+          <div class="instaSlot">Espaço para Instagram</div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    // ===== Carousel (simples, sem libs) =====
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const dots = Array.from(document.querySelectorAll('.dotBtn'));
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+
+    let i = 0;
+
+    function setActive(idx){
+      i = (idx + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('active', k === i));
+      dots.forEach((d, k) => d.classList.toggle('active', k === i));
+    }
+
+    prev?.addEventListener('click', () => setActive(i - 1));
+    next?.addEventListener('click', () => setActive(i + 1));
+    dots.forEach(d => d.addEventListener('click', () => setActive(Number(d.dataset.dot))));
+
+    // autoplay leve (pausa ao interagir)
+    let t = setInterval(() => setActive(i + 1), 4500);
+    [prev, next, ...dots].forEach(el => el?.addEventListener('click', () => {
+      clearInterval(t);
+      t = setInterval(() => setActive(i + 1), 4500);
+    }));
+
+    // ===== Side benefits carousel =====
+    const sideSlides = Array.from(document.querySelectorAll('.sideSlide'));
+    const sideDots = Array.from(document.querySelectorAll('.sideDot'));
+    let sideI = 0;
+
+    function setSideActive(idx){
+      if(!sideSlides.length) return;
+      sideI = (idx + sideSlides.length) % sideSlides.length;
+      sideSlides.forEach((s, k) => s.classList.toggle('active', k === sideI));
+      sideDots.forEach((d, k) => d.classList.toggle('active', k === sideI));
+    }
+
+    sideDots.forEach(d => d.addEventListener('click', () => setSideActive(Number(d.dataset.sideDot))));
+
+    let sideT = setInterval(() => setSideActive(sideI + 1), 3600);
+    sideDots.forEach(el => el?.addEventListener('click', () => {
+      clearInterval(sideT);
+      sideT = setInterval(() => setSideActive(sideI + 1), 3600);
+    }));
+
+    // Mobile menu
+    const sheet = document.getElementById('sheet');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', ()=>{
+      sheet.classList.add('show');
+      sheet.setAttribute('aria-hidden','false');
+    });
+    sheet?.addEventListener('click', (e)=>{
+      if(e.target && e.target.matches('[data-close]')){
+        sheet.classList.remove('show');
+        sheet.setAttribute('aria-hidden','true');
+      }
+    });
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

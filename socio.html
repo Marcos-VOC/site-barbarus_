@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlética Barbarus • UFOB — Sócio Torcedor</title>
+  <meta name="description" content="Conheça o Sócio Torcedor da Atlética Barbarus (UFOB) e suas vantagens exclusivas." />
+  <meta name="theme-color" content="#0F2E22" />
+
+  <style>
+    :root{
+      --bg: #F6F7F6;
+      --paper: #FFFFFF;
+      --ink: #0B0E0C;
+      --muted: rgba(11,14,12,.68);
+      --muted2: rgba(11,14,12,.52);
+      --line: rgba(11,14,12,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.10);
+      --shadow2: 0 12px 36px rgba(0,0,0,.10);
+      --green: #1ED760;
+      --greenDeep:#0F2E22;
+      --orange:#FF6A00;
+      --r: 16px;
+      --r2: 20px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial;
+      background:
+        radial-gradient(900px 520px at 12% -5%, rgba(30,215,96,.14), transparent 60%),
+        radial-gradient(900px 520px at 92% 10%, rgba(255,106,0,.12), transparent 62%),
+        linear-gradient(180deg, #FFFFFF 0%, var(--bg) 60%, #F3F4F3 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    button,input{font:inherit}
+
+    .container{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(246,247,246,.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .logoWrap{
+      width:64px; height:64px;
+      background: transparent;
+      display:grid; place-items:center;
+    }
+    .logoWrap img{width:100%; height:100%; object-fit:contain}
+    .brandText h1{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+    .brandText p{margin:3px 0 0; color:var(--muted2); font-size:12px}
+
+    .links{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center}
+    .links a{
+      font-size:14px;
+      font-weight: 700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .links a:hover{color:var(--ink); border-color: rgba(11,14,12,.12); background: rgba(255,255,255,.65)}
+
+    .actions{display:flex; align-items:center; gap:10px; justify-content:flex-end; min-width:220px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.75);
+      color: var(--ink);
+      cursor:pointer;
+      transition:.18s ease;
+      font-weight: 750;
+      letter-spacing:.02em;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.92); transform: translateY(-1px)}
+    .btnPrimary{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(15,46,34,1), rgba(15,46,34,.86));
+      box-shadow: 0 18px 52px rgba(15,46,34,.18);
+    }
+    .btnAccent{
+      border:0;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(255,106,0,1), rgba(255,166,84,.95));
+      box-shadow: 0 18px 52px rgba(255,106,0,.18);
+    }
+
+    .hero{
+      padding: 24px 0 12px;
+    }
+    .heroCard{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      align-items:center;
+    }
+    .heroCard h2{margin:0; font-size:26px}
+    .heroCard p{margin:8px 0 0; color:var(--muted); line-height:1.7}
+    .heroTag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.8);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+    }
+    .heroIllus{
+      border-radius: var(--r2);
+      border:1px solid rgba(11,14,12,.12);
+      background:
+        radial-gradient(180px 120px at 20% 20%, rgba(30,215,96,.18), transparent 60%),
+        radial-gradient(180px 120px at 80% 80%, rgba(255,106,0,.18), transparent 60%),
+        rgba(255,255,255,.9);
+      width: 100%;
+      height: 320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      justify-self:stretch;
+    }
+    .heroImg{
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      object-position: 50% 50%;
+      border-radius: var(--r2);
+    }
+    .heroIllus .badge{
+      position:absolute; bottom:12px; right:12px;
+      padding:6px 10px;
+      border-radius: 12px;
+      background: rgba(15,46,34,.08);
+      border:1px dashed rgba(11,14,12,.16);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--muted);
+    }
+
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      margin: 14px 0 10px;
+    }
+    .sectionHead h3{margin:0; font-size:18px}
+    .sectionHead p{margin:6px 0 0; color:var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin: 12px 0 22px;
+    }
+    .benefit{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow2);
+      padding: 14px;
+      min-height: 220px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .illus{
+      width: 160px;
+      height: 160px;
+      border-radius: 14px;
+      border:1px dashed rgba(11,14,12,.16);
+      background: rgba(255,255,255,.9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      margin: 0 auto;
+    }
+    .illus img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .benefit h4{margin:0; font-size:13px; letter-spacing:.08em; text-transform:uppercase}
+    .benefit p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    .planWrap{
+      display:grid;
+      grid-template-columns: 1fr;
+      margin-bottom: 22px;
+    }
+    .planCard{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+    }
+    .planLabel{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(15,46,34,.08);
+      color: var(--greenDeep);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .planCard h4{
+      margin:10px 0 6px;
+      font-size:18px;
+    }
+    .price{
+      display:flex;
+      align-items:flex-end;
+      gap:6px;
+      margin-top: 8px;
+    }
+    .price strong{
+      font-size:34px;
+      line-height:1;
+      color: var(--greenDeep);
+      letter-spacing:-.02em;
+    }
+    .price span{
+      color: var(--muted);
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    .planCard p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+    }
+    .payMethod{
+      margin-top: 10px;
+      border-radius: 14px;
+      border:1px dashed rgba(11,14,12,.16);
+      background: linear-gradient(135deg, rgba(30,215,96,.08), rgba(255,106,0,.08));
+      padding: 12px;
+      font-weight:700;
+      color: var(--greenDeep);
+    }
+    .planBenefits{
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .helpBox{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom: 22px;
+    }
+    .helpBox p{
+      margin:6px 0 0;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    footer{
+      padding: 22px 0 34px;
+      border-top: 1px solid rgba(11,14,12,.10);
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footerBottom{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .menuBtn{display:none}
+    @media (max-width: 980px){
+      .links{display:none}
+      .actions{min-width:auto}
+      .menuBtn{display:inline-flex}
+      .heroCard{grid-template-columns: 1fr}
+      .grid{grid-template-columns: repeat(2, 1fr)}
+    }
+    @media (max-width: 520px){
+      .grid{grid-template-columns: 1fr}
+    }
+
+    .sheet{position:fixed; inset:0; z-index:80; display:none}
+    .sheet.show{display:block}
+    .sheet .bg{position:absolute; inset:0; background: rgba(0,0,0,.22)}
+    .sheet .panel{
+      position:absolute; left:50%; top:14px; transform: translateX(-50%);
+      width:min(560px, 92vw);
+      border-radius: 18px;
+      border:1px solid rgba(11,14,12,.12);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .sheet a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(11,14,12,.10);
+      background: rgba(255,255,255,.78);
+      margin-top: 10px;
+      color: var(--muted);
+    }
+    .sheet a:hover{background: rgba(255,255,255,.95); color: var(--ink)}
+
+    ::selection{background: rgba(30,215,96,.22)}
+  </style>
+</head>
+<body>
+
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="bg" data-close></div>
+    <div class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+        <strong style="letter-spacing:.06em; text-transform:uppercase">Menu</strong>
+        <button class="btn" data-close aria-label="Fechar menu">Fechar</button>
+      </div>
+      <a href="index.html" data-close>Início</a>
+      <a href="socio.html" data-close>Clã Barbarus (Sócio)</a>
+      <a href="loja.html" data-close>Nossa Loja</a>
+      <a href="historia.html" data-close>História e Legado</a>
+      <a href="diretoria.html" data-close>Diretoria</a>
+      <a href="contato.html" data-close>Fale Conosco</a>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Página inicial">
+          <div class="logoWrap" aria-hidden="true">
+            <img alt="Logo Barbarus" src="img/logo.png" onerror="this.style.display='none'" />
+          </div>
+          <div class="brandText">
+            <h1>ATLÉTICA BARBARUS</h1>
+            <p>UFOB • Força. União. Coragem.</p>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Navegação principal">
+          <a href="socio.html">Clã Barbarus (Sócio)</a>
+          <a href="loja.html">Nossa loja</a>
+          <a href="historia.html">História e legado</a>
+          <a href="diretoria.html">Diretoria</a>
+          <a href="contato.html">Fale conosco</a>
+        </nav>
+
+        <div class="actions">
+          <button class="btn menuBtn" id="menuBtn" aria-label="Abrir menu">Menu</button>
+          <a class="btn btnPrimary" href="contato.html">Quero ser sócio</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="heroCard">
+          <div>
+            <span class="heroTag">Sócio Torcedor</span>
+            <h2>O clã que fortalece a atlética por dentro e por fora.</h2>
+            <p>
+              O Sócio Torcedor Barbarus é o jeito oficial de apoiar a atlética, ter voz nos projetos
+              e viver experiências exclusivas com a gente. A Barbarus representa o Bacharelado
+              Interdisciplinar em Ciência e Tecnologia da UFOB (BICT).
+            </p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn btnPrimary" href="contato.html">Quero ser sócio</a>
+              <a class="btn" href="contato.html">Tirar dúvidas</a>
+            </div>
+          </div>
+          <div class="heroIllus" aria-hidden="true">
+            <img
+              class="heroImg"
+              src="img/torcedor.png"
+              alt="Sócio Torcedor Barbarus"
+              onerror="this.style.display='none'"
+            />
+            <div class="badge">Sou sócio torcedor</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sectionHead">
+          <div>
+            <h3>Vantagens do Sócio Torcedor</h3>
+            <p>O essencial para quem quer somar com a atlética.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="benefit">
+            <div class="illus">
+              <img src="img/des.png" alt="Promoções" />
+            </div>
+            <h4>Promoções</h4>
+            <p>Descontos exclusivos na loja oficial e prioridade em campanhas promocionais da Barbarus.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="illus">
+              <img src="img/participar.png" alt="Participar da Atlética" />
+            </div>
+            <h4>Participar da Atlética</h4>
+            <p>Participa das ações e decisões do clã, ajudando a construir eventos e projetos da atlética.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="illus">
+              <img src="img/ajudar.png" alt="Ajudar a Atlética" />
+            </div>
+            <h4>Apoiar a Atlética</h4>
+            <p>Sua contribuição fortalece treinos, materiais, campeonatos e toda a estrutura do dia a dia.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="planWrap" aria-label="Plano de sócio torcedor">
+        <div class="planCard">
+          <span class="planLabel">Plano único</span>
+          <h4>Clã Barbarus • Sócio Torcedor</h4>
+          <p>Sem opções complicadas: um plano direto para quem quer apoiar a atlética durante todo o ano.</p>
+          <div class="price">
+            <strong>R$ 15,00</strong>
+            <span>anuais</span>
+          </div>
+          <div style="margin-top:14px">
+            <a class="btn btnPrimary" href="contato.html">Quero ser sócio</a>
+          </div>
+
+          <h4 style="margin-top:16px">Forma de pagamento</h4>
+          <p>Pagamento anual em parcela única para ativar sua associação no clã.</p>
+          <div class="payMethod">PIX • transferência rápida e confirmação no mesmo dia</div>
+
+          <h4 style="margin-top:16px">Vantagens inclusas no plano</h4>
+          <ul class="planBenefits">
+            <li>Descontos na loja oficial da Barbarus.</li>
+            <li>Participação nas ações e decisões da atlética.</li>
+            <li>Fortalecimento de treinos, eventos e campeonatos.</li>
+            <li>Integração direta com o clã e com a diretoria.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="helpBox" aria-label="Dúvidas sobre o Sócio Torcedor">
+        <div>
+          <strong style="letter-spacing:.06em; text-transform:uppercase">Ainda tem dúvidas?</strong>
+          <p>Entre em contato com a diretoria e fale com a gente no WhatsApp.</p>
+        </div>
+        <a
+          class="btn btnAccent"
+          href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20o%20S%C3%B3cio%20Torcedor%20B%C3%A1rbarus."
+          target="_blank"
+          rel="noopener noreferrer"
+        >Chamar no WhatsApp</a>
+      </section>
+
+      <footer>
+        <div class="footerBottom">
+          <span>© <span id="year"></span> Atlética Barbarus • UFOB</span>
+          <div style="display:flex; gap:14px">
+            <a href="https://instagram.com/ufobarbarus" target="_blank">Instagram</a>
+            <a href="mailto:aaabicet@gmail.com">Email</a>
+            <a href="contato.html">Contato</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const sheet = document.getElementById('sheet');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', ()=>{
+      sheet.classList.add('show');
+      sheet.setAttribute('aria-hidden','false');
+    });
+    sheet?.addEventListener('click', (e)=>{
+      if(e.target && e.target.matches('[data-close]')){
+        sheet.classList.remove('show');
+        sheet.setAttribute('aria-hidden','true');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
