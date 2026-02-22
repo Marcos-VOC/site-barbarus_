@@ -1,1 +1,1 @@
-Teste de clonagem
+Teste de clone
